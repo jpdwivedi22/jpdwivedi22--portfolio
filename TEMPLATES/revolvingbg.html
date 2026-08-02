@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carlos Magnus - Portfolio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=Inter:wght@400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+theme: {
+extend: {
+fontFamily: {
+sans: ['Inter', 'sans-serif'],
+serif: ['Cormorant Garamond', 'serif'],
+mono: ['JetBrains Mono', 'monospace'],
+},
+colors: {
+obsidian: '#0B0B0D',
+ivory: '#E8E6E3',
+gold: '#C6A75E',
+'gold-soft': 'rgba(198, 167, 94, 0.6)',
+steel: '#8A9197',
+crimson: '#7A1C1C',
+mist: '#BFC5C9',
+}
+}
+}
+}
+</script>
+<style>
+/* Hide scrollbar for a cleaner look */
+::-webkit-scrollbar {
+width: 8px;
+}
+::-webkit-scrollbar-track {
+background: #0B0B0D;
+}
+::-webkit-scrollbar-thumb {
+background: #1A1A1F;
+}
+::-webkit-scrollbar-thumb:hover {
+background: rgba(198, 167, 94, 0.3);
+}
+.bg-grid {
+background-image: linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+background-size: 4rem 4rem;
+}
+</style><!-- aura-ga4-start -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2M6V79H761"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-2M6V79H761');
+</script>
+<!-- aura-ga4-end -->
+</head>
+<body class="bg-obsidian text-ivory font-sans antialiased relative min-h-screen selection:bg-gold/30 selection:text-gold overflow-x-hidden">
+
+    <!-- Ambient Grid & Glow -->
+    <div class="fixed inset-0 pointer-events-none z-0 bg-grid"></div>
+    <div class="fixed inset-0 pointer-events-none z-0 bg-[radial-gradient(circle_at_50%_0%,rgba(138,105,30,0.05),transparent_70%)]"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-40 bg-obsidian/70 backdrop-blur-md border-b border-gold/15">
+        <div class="max-w-[1280px] mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <span class="border border-gold/30 px-1.5 py-0.5 text-xs font-mono text-gold tracking-widest">CM</span>
+                <span class="text-sm font-sans tracking-wide text-ivory hidden sm:block">Carlos Magnus</span>
+            </div>
+
+            <ul class="hidden md:flex items-center gap-8 text-xs font-mono tracking-widest text-steel">
+                <li><a href="#origem" class="hover:text-gold transition-colors"><span class="text-gold-soft mr-2">I.</span>ORIGEM</a></li>
+                <li><a href="#pilares" class="hover:text-gold transition-colors"><span class="text-gold-soft mr-2">II.</span>PILARES</a></li>
+                <li><a href="#obras" class="hover:text-gold transition-colors"><span class="text-gold-soft mr-2">III.</span>OBRAS</a></li>
+                <li><a href="#cronica" class="hover:text-gold transition-colors"><span class="text-gold-soft mr-2">IV.</span>CRÔNICA</a></li>
+                <li><a href="#audiencia" class="hover:text-gold transition-colors"><span class="text-gold-soft mr-2">V.</span>AUDIÊNCIA</a></li>
+            </ul>
+
+            <div class="flex items-center gap-4">
+                <button class="border border-gold/30 text-gold p-2 hover:bg-gold/10 transition-colors" aria-label="Toggle Theme">
+                    <i data-lucide="sun" class="w-4 h-4" stroke-width="1.5"></i>
+                </button>
+                <a href="#audiencia" class="hidden sm:inline-block border border-gold/30 text-gold font-mono text-xs uppercase tracking-widest px-6 py-2.5 hover:bg-gold/10 transition-colors">
+                    Solicitar Audiência
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10">
+        <!-- Hero Section -->
+        <section class="max-w-[1280px] mx-auto px-6 pt-40 pb-24 md:pt-52 md:pb-32 flex flex-col md:flex-row items-center justify-between gap-16">
+            <div class="w-full md:w-3/5 space-y-10">
+                <div class="flex items-center gap-4 text-xs font-mono text-steel tracking-widest uppercase">
+                    <div class="h-px w-8 bg-gold/30"></div>
+                    <span>MMXVI – ANNO DOMINI</span>
+                </div>
+
+                <h1 class="font-serif text-7xl md:text-9xl tracking-tighter leading-[0.9] font-normal">
+                    Carlos<br>
+                    <span class="text-gold">Magnus</span>
+                </h1>
+
+                <div class="flex items-start gap-6 max-w-xl">
+                    <div class="w-px h-24 bg-gold/30 mt-2 shrink-0"></div>
+                    <p class="text-xl font-sans text-mist leading-relaxed">
+                        Engenheiro e arquiteto de software. Construo sistemas inevitáveis — escrupulosos na execução, imperiais na intenção. Poder latente, sem ruído.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-4 pt-4">
+                    <a href="#obras" class="bg-gold text-obsidian font-mono text-xs uppercase tracking-widest px-8 py-4 shadow-[0_0_40px_-10px_rgba(198,167,94,0.45)] hover:brightness-110 transition-all flex items-center gap-2">
+                        Ver Obras <i data-lucide="arrow-down-right" class="w-4 h-4" stroke-width="1.5"></i>
+                    </a>
+                    <a href="#audiencia" class="border border-gold/30 text-gold font-mono text-xs uppercase tracking-widest px-8 py-4 hover:bg-gold/10 transition-colors">
+                        Solicitar Audiência
+                    </a>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-8 pt-8 text-xs font-mono tracking-widest uppercase">
+                    <div class="flex items-center gap-2 text-steel">
+                        <span class="text-gold text-base">10+</span> Anos em campo
+                    </div>
+                    <div class="flex items-center gap-2 text-steel">
+                        <span class="text-gold text-base">37</span> Sistemas em produção
+                    </div>
+                    <div class="flex items-center gap-2 text-steel">
+                        <span class="text-gold text-base">99.97%</span> Uptime Distribuído
+                    </div>
+                    <div class="flex items-center gap-2 text-steel">
+                        <span class="text-gold text-base">0</span> Horas aguardando hype
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medallion -->
+            <div class="hidden md:flex w-2/5 justify-end items-center opacity-40">
+                <svg class="w-[400px] h-[400px] text-gold drop-shadow-[0_0_40px_rgba(198,167,94,0.25)]" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.5">
+                    <circle cx="100" cy="100" r="95" stroke-dasharray="2 4" />
+                    <circle cx="100" cy="100" r="80" />
+                    <circle cx="100" cy="100" r="60" />
+                    <path d="M100 20 L130 100 L100 180 L70 100 Z" />
+                    <path d="M100 40 L115 100 L100 160 L85 100 Z" stroke-width="1"/>
+                    <circle cx="100" cy="100" r="4" fill="currentColor" />
+
+                    <!-- Decorative text along path -->
+                    <defs>
+                        <path id="textPath1" d="M 20 100 A 80 80 0 0 1 180 100" />
+                    </defs>
+                    <text font-family="JetBrains Mono" font-size="6" fill="currentColor" stroke="none" letter-spacing="4">
+                        <textPath href="#textPath1" startOffset="50%" text-anchor="middle">EX SILENTIO</textPath>
+                    </text>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Chapter Divider -->
+        <div class="flex items-center justify-center py-16 opacity-70">
+            <div class="h-px bg-gold/30 w-32"></div>
+            <div class="w-2.5 h-2.5 border border-gold rotate-45 mx-6"></div>
+            <div class="h-px bg-gold/30 w-32"></div>
+        </div>
+
+        <!-- Section I: Origem -->
+        <section id="origem" class="max-w-[1280px] mx-auto px-6 py-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4 text-xs font-mono text-steel tracking-widest uppercase">
+                        <div class="h-px w-8 bg-gold/30"></div>
+                        <span>I · ORIGEM</span>
+                    </div>
+                    <h2 class="font-serif text-4xl md:text-5xl tracking-tight leading-tight">
+                        Não levanto a voz.<br>
+                        <span class="text-gold">Levanto estruturas.</span>
+                    </h2>
+                </div>
+
+                <div class="space-y-8 text-lg font-sans text-mist leading-relaxed border-l border-gold/15 pl-8 lg:pl-16">
+                    <p>
+                        Comecei a programar por necessidade e fiquei por disciplina. Uma década depois, não construo mais para impressionar — construo para durar.
+                    </p>
+                    <p>
+                        Minha regra é simples: arquiteturas que sustentam o peso das decisões sem pedir licença, times que confiam na direção porque a direção honra o time, e produtos que resolvem o problema verdadeiro em vez do problema bonito.
+                    </p>
+                    <p>
+                        O trono não é sobre dominar — é sobre não deixar o caos vencer por omissão.
+                    </p>
+                    <blockquote class="pt-6 border-t border-gold/15 mt-8">
+                        <p class="font-serif italic text-2xl tracking-tight text-ivory mb-4">
+                            "Qui bene imperat, paruerit aliquando necesse est."
+                        </p>
+                        <footer class="text-xs font-mono text-steel tracking-widest uppercase">— CÍCERO</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter Divider -->
+        <div class="flex items-center justify-center py-16 opacity-70">
+            <div class="h-px bg-gold/30 w-32"></div>
+            <div class="w-2.5 h-2.5 border border-gold rotate-45 mx-6"></div>
+            <div class="h-px bg-gold/30 w-32"></div>
+        </div>
+
+        <!-- Section II: Pilares -->
+        <section id="pilares" class="max-w-[1280px] mx-auto px-6 py-24">
+            <div class="mb-16 space-y-6">
+                <div class="flex items-center gap-4 text-xs font-mono text-steel tracking-widest uppercase">
+                    <div class="h-px w-8 bg-gold/30"></div>
+                    <span>II · PILARES</span>
+                </div>
+                <h2 class="font-serif text-4xl md:text-5xl tracking-tight leading-tight">
+                    Quatro colunas.<br>
+                    <span class="text-gold">Uma arquitetura.</span>
+                </h2>
+                <p class="text-lg font-sans text-mist">
+                    O que carrega o peso. O que não se negocia.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Pillar 1 -->
+                <div class="bg-[#1A1A1F]/60 backdrop-blur-sm p-8 md:p-10 border border-gold/15 border-l-gold/40 hover:bg-[#1A1A1F]/80 transition-colors group">
+                    <div class="flex justify-between items-start mb-12">
+                        <span class="font-serif text-5xl text-gold-soft leading-none">I</span>
+                        <span class="text-xs font-mono text-steel tracking-widest uppercase">Pilar</span>
+                    </div>
+                    <h3 class="font-serif text-3xl tracking-tight mb-4">Arquitetura</h3>
+                    <p class="text-base font-sans text-mist mb-8">
+                        Sistemas que suportam o peso das decisões sem pedir licença.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs font-mono text-steel tracking-widest uppercase">
+                        <span class="border border-gold/20 px-3 py-1">Distributed Systems</span>
+                        <span class="border border-gold/20 px-3 py-1">Event-Driven</span>
+                        <span class="border border-gold/20 px-3 py-1">Domain-Driven Design</span>
+                    </div>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="bg-[#1A1A1F]/60 backdrop-blur-sm p-8 md:p-10 border border-gold/15 hover:bg-[#1A1A1F]/80 transition-colors">
+                    <div class="flex justify-between items-start mb-12">
+                        <span class="font-serif text-5xl text-gold-soft leading-none">II</span>
+                        <span class="text-xs font-mono text-steel tracking-widest uppercase">Pilar</span>
+                    </div>
+                    <h3 class="font-serif text-3xl tracking-tight mb-4">Engenharia</h3>
+                    <p class="text-base font-sans text-mist mb-8">
+                        Código como disciplina. Refatoração como higiene. Entrega como contrato.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs font-mono text-steel tracking-widest uppercase">
+                        <span class="border border-gold/20 px-3 py-1">TypeScript</span>
+                        <span class="border border-gold/20 px-3 py-1">Go</span>
+                        <span class="border border-gold/20 px-3 py-1">Rust</span>
+                        <span class="border border-gold/20 px-3 py-1">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="bg-[#1A1A1F]/60 backdrop-blur-sm p-8 md:p-10 border border-gold/15 hover:bg-[#1A1A1F]/80 transition-colors">
+                    <div class="flex justify-between items-start mb-12">
+                        <span class="font-serif text-5xl text-gold-soft leading-none">III</span>
+                        <span class="text-xs font-mono text-steel tracking-widest uppercase">Pilar</span>
+                    </div>
+                    <h3 class="font-serif text-3xl tracking-tight mb-4">Liderança</h3>
+                    <p class="text-base font-sans text-mist mb-8">
+                        Times que confiam na direção porque a direção honra o time.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs font-mono text-steel tracking-widest uppercase">
+                        <span class="border border-gold/20 px-3 py-1">Tech Strategy</span>
+                        <span class="border border-gold/20 px-3 py-1">Mentoria</span>
+                        <span class="border border-gold/20 px-3 py-1">Hiring</span>
+                        <span class="border border-gold/20 px-3 py-1">Gestão de Escopo</span>
+                    </div>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="bg-[#1A1A1F]/60 backdrop-blur-sm p-8 md:p-10 border border-gold/15 hover:bg-[#1A1A1F]/80 transition-colors">
+                    <div class="flex justify-between items-start mb-12">
+                        <span class="font-serif text-5xl text-gold-soft leading-none">IV</span>
+                        <span class="text-xs font-mono text-steel tracking-widest uppercase">Pilar</span>
+                    </div>
+                    <h3 class="font-serif text-3xl tracking-tight mb-4">Produto</h3>
+                    <p class="text-base font-sans text-mist mb-8">
+                        A linha entre o que os usuários pedem e o que eles realmente precisam.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-xs font-mono text-steel tracking-widest uppercase">
+                        <span class="border border-gold/20 px-3 py-1">Discovery</span>
+                        <span class="border border-gold/20 px-3 py-1">Priorização</span>
+                        <span class="border border-gold/20 px-3 py-1">Métricas</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arsenal -->
+            <div class="mt-20 pt-10 border-t border-gold/15">
+                <div class="flex flex-col md:flex-row items-start md:items-center gap-8">
+                    <span class="text-xs font-mono text-steel tracking-widest uppercase shrink-0">— ARSENAL —</span>
+                    <div class="flex flex-wrap gap-2 text-[10px] font-mono text-steel uppercase tracking-widest">
+                        <span class="bg-obsidian/40 border border-gold/15 px-3 py-1.5">TypeScript</span>
+                        <span class="bg-obsidian/40 border border-gold/15 px-3 py-1.5">Next.js</span>
+                        <span class="bg-obsidian/40 border border-gold/15 px-3 py-1.5">React</span>
+                        <span class="bg-obsidian/40 border border-gold/15 px-3 py-1.5">Node.js</span>
+                        <span class="bg-obsidian/40 border border-gold/15 px-3 py-1.5">Go</span>
+                        <span class="bg-obsidian/40 border border-gold/15 px-3 py-1.5">Rust</span>
+                        <span class="bg-obsidian/40 border border-gold/15 px-3 py-1.5">PostgreSQL</span>
+                        <span class="bg-obsidian/40 border border-gold/15 px-3 py-1.5">Redis</span>
+                        <span class="bg-obsidian/40 border border-gold/15 px-3 py-1.5">Kafka</span>
+                        <span class="bg-obsidian/40 border border-gold/15 px-3 py-1.5">Kubernetes</span>
+                        <span class="bg-obsidian/40 border border-gold/15 px-3 py-1.5">AWS</span>
+                        <span class="bg-obsidian/40 border border-gold/15 px-3 py-1.5">Terraform</span>
+                        <span class="bg-obsidian/40 border border-gold/15 px-3 py-1.5">GraphQL</span>
+                        <span class="bg-obsidian/40 border border-gold/15 px-3 py-1.5">tRPC</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter Divider -->
+        <div class="flex items-center justify-center py-16 opacity-70">
+            <div class="h-px bg-gold/30 w-32"></div>
+            <div class="w-2.5 h-2.5 border border-gold rotate-45 mx-6"></div>
+            <div class="h-px bg-gold/30 w-32"></div>
+        </div>
+
+        <!-- Section III: Obras -->
+        <section id="obras" class="max-w-[1280px] mx-auto px-6 py-24">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-4 text-xs font-mono text-steel tracking-widest uppercase">
+                        <div class="h-px w-8 bg-gold/30"></div>
+                        <span>III · OBRAS</span>
+                    </div>
+                    <h2 class="font-serif text-4xl md:text-5xl tracking-tight leading-tight">
+                        Cada obra <span class="text-gold">deixa marca</span>.<br>
+                        Nenhuma deixa ruído.
+                    </h2>
+                </div>
+                <div class="text-xs font-mono text-steel tracking-widest uppercase pb-2">
+                    4 PEÇAS · SELECIONADAS
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Work 1 -->
+                <a href="#" class="group bg-[#1A1A1F]/60 backdrop-blur-sm p-8 md:p-10 border border-gold/15 hover:border-gold/30 transition-all block relative">
+                    <i data-lucide="arrow-up-right" class="absolute top-8 right-8 w-5 h-5 text-gold opacity-0 group-hover:opacity-100 transition-opacity" stroke-width="1.5"></i>
+                    <div class="text-xs font-mono text-gold-soft tracking-widest uppercase mb-6">01 · MMXXV</div>
+                    <h3 class="font-serif text-3xl tracking-tight mb-2 group-hover:text-gold transition-colors">Relatum</h3>
+                    <div class="text-[10px] font-mono text-steel tracking-widest uppercase mb-6">Fundador & Arquiteto</div>
+                    <p class="text-base font-sans text-mist mb-8">
+                        Plataforma de relações comerciais que substituiu 3 ferramentas isoladas por um único trono de dados.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-[10px] font-mono text-steel tracking-widest uppercase">
+                        <span class="border border-gold/20 px-2 py-1">Next.js</span>
+                        <span class="border border-gold/20 px-2 py-1">PostgreSQL</span>
+                        <span class="border border-gold/20 px-2 py-1">tRPC</span>
+                        <span class="border border-gold/20 px-2 py-1">+1</span>
+                    </div>
+                </a>
+
+                <!-- Work 2 -->
+                <a href="#" class="group bg-[#1A1A1F]/60 backdrop-blur-sm p-8 md:p-10 border border-gold/15 hover:border-gold/30 transition-all block relative">
+                    <i data-lucide="arrow-up-right" class="absolute top-8 right-8 w-5 h-5 text-gold opacity-0 group-hover:opacity-100 transition-opacity" stroke-width="1.5"></i>
+                    <div class="text-xs font-mono text-gold-soft tracking-widest uppercase mb-6">02 · MMXXIV</div>
+                    <h3 class="font-serif text-3xl tracking-tight mb-2 group-hover:text-gold transition-colors">Kairos</h3>
+                    <div class="text-[10px] font-mono text-steel tracking-widest uppercase mb-6">Lead Engineer</div>
+                    <p class="text-base font-sans text-mist mb-8">
+                        Motor de agendamento distribuído que orquestra milhões de eventos por dia sem perder um tick.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-[10px] font-mono text-steel tracking-widest uppercase">
+                        <span class="border border-gold/20 px-2 py-1">Go</span>
+                        <span class="border border-gold/20 px-2 py-1">Temporal</span>
+                        <span class="border border-gold/20 px-2 py-1">Kafka</span>
+                        <span class="border border-gold/20 px-2 py-1">+1</span>
+                    </div>
+                </a>
+
+                <!-- Work 3 -->
+                <a href="#" class="group bg-[#1A1A1F]/60 backdrop-blur-sm p-8 md:p-10 border border-gold/15 hover:border-gold/30 transition-all block relative">
+                    <i data-lucide="arrow-up-right" class="absolute top-8 right-8 w-5 h-5 text-gold opacity-0 group-hover:opacity-100 transition-opacity" stroke-width="1.5"></i>
+                    <div class="text-xs font-mono text-gold-soft tracking-widest uppercase mb-6">03 · MMXXIV</div>
+                    <h3 class="font-serif text-3xl tracking-tight mb-2 group-hover:text-gold transition-colors">Echoes</h3>
+                    <div class="text-[10px] font-mono text-steel tracking-widest uppercase mb-6">Produto & Engenharia</div>
+                    <p class="text-base font-sans text-mist mb-8">
+                        Sistema de telemetria que transforma ruído em decisão executiva em tempo real.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-[10px] font-mono text-steel tracking-widest uppercase">
+                        <span class="border border-gold/20 px-2 py-1">TypeScript</span>
+                        <span class="border border-gold/20 px-2 py-1">Clickhouse</span>
+                        <span class="border border-gold/20 px-2 py-1">D3</span>
+                    </div>
+                </a>
+
+                <!-- Work 4 -->
+                <a href="#" class="group bg-[#1A1A1F]/60 backdrop-blur-sm p-8 md:p-10 border border-gold/15 hover:border-gold/30 transition-all block relative">
+                    <i data-lucide="arrow-up-right" class="absolute top-8 right-8 w-5 h-5 text-gold opacity-0 group-hover:opacity-100 transition-opacity" stroke-width="1.5"></i>
+                    <div class="text-xs font-mono text-gold-soft tracking-widest uppercase mb-6">04 · MMXXIII</div>
+                    <h3 class="font-serif text-3xl tracking-tight mb-2 group-hover:text-gold transition-colors">Atlas</h3>
+                    <div class="text-[10px] font-mono text-steel tracking-widest uppercase mb-6">Staff Engineer (Contrato)</div>
+                    <p class="text-base font-sans text-mist mb-8">
+                        Reescrita do núcleo de pricing de um marketplace sem downtime e sem reclamações.
+                    </p>
+                    <div class="flex flex-wrap gap-2 text-[10px] font-mono text-steel tracking-widest uppercase">
+                        <span class="border border-gold/20 px-2 py-1">Rust</span>
+                        <span class="border border-gold/20 px-2 py-1">Postgres</span>
+                        <span class="border border-gold/20 px-2 py-1">Terraform</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Chapter Divider -->
+        <div class="flex items-center justify-center py-16 opacity-70">
+            <div class="h-px bg-gold/30 w-32"></div>
+            <div class="w-2.5 h-2.5 border border-gold rotate-45 mx-6"></div>
+            <div class="h-px bg-gold/30 w-32"></div>
+        </div>
+
+        <!-- Section IV: Crônica -->
+        <section id="cronica" class="max-w-[1280px] mx-auto px-6 py-24">
+            <div class="mb-20 space-y-6">
+                <div class="flex items-center gap-4 text-xs font-mono text-steel tracking-widest uppercase">
+                    <div class="h-px w-8 bg-gold/30"></div>
+                    <span>IV · CRÔNICA</span>
+                </div>
+                <h2 class="font-serif text-4xl md:text-5xl tracking-tight leading-tight">
+                    Uma linha do tempo.<br>
+                    <span class="text-gold">Uma trajetória.</span>
+                </h2>
+            </div>
+
+            <div class="relative pl-6 md:pl-10 border-l border-gold/15 space-y-16 max-w-4xl">
+                <!-- Timeline Item 1 -->
+                <div class="relative">
+                    <div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-3 h-3 bg-obsidian border-2 border-gold rounded-full ring-4 ring-obsidian"></div>
+                    <div class="text-xs font-mono text-gold-soft tracking-widest uppercase mb-3 flex items-center gap-4">
+                        <span>2024 — HOJE</span>
+                        <span class="text-steel">CAP. 04</span>
+                    </div>
+                    <h3 class="font-serif text-2xl tracking-tight mb-4 text-ivory">Fundador & Arquiteto-Chefe · Relatum</h3>
+                    <p class="text-lg font-sans text-mist">
+                        Construindo o trono. Produto, time e arquitetura. Da primeira linha de código à primeira receita recorrente.
+                    </p>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="relative">
+                    <div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-3 h-3 bg-obsidian border-2 border-gold rounded-full ring-4 ring-obsidian"></div>
+                    <div class="text-xs font-mono text-gold-soft tracking-widest uppercase mb-3 flex items-center gap-4">
+                        <span>2022 — 2024</span>
+                        <span class="text-steel">CAP. 03</span>
+                    </div>
+                    <h3 class="font-serif text-2xl tracking-tight mb-4 text-ivory">Staff Engineer · Consultoria independente</h3>
+                    <p class="text-lg font-sans text-mist">
+                        Missões cirúrgicas em empresas de médio e grande porte. Entregues para salvar projetos, não para engrossar timelines.
+                    </p>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="relative">
+                    <div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-3 h-3 bg-obsidian border-2 border-gold/40 rounded-full ring-4 ring-obsidian"></div>
+                    <div class="text-xs font-mono text-gold-soft tracking-widest uppercase mb-3 flex items-center gap-4">
+                        <span>2019 — 2022</span>
+                        <span class="text-steel">CAP. 02</span>
+                    </div>
+                    <h3 class="font-serif text-2xl tracking-tight mb-4 text-mist">Tech Lead · Plataforma B2B (stealth)</h3>
+                    <p class="text-lg font-sans text-mist">
+                        Liderei três squads através de dois pivôs. Mantive o core estável enquanto a estratégia mudava de rota.
+                    </p>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="relative">
+                    <div class="absolute -left-[31px] md:-left-[47px] top-1.5 w-3 h-3 bg-obsidian border-2 border-gold/40 rounded-full ring-4 ring-obsidian"></div>
+                    <div class="text-xs font-mono text-gold-soft tracking-widest uppercase mb-3 flex items-center gap-4">
+                        <span>2016 — 2019</span>
+                        <span class="text-steel">CAP. 01</span>
+                    </div>
+                    <h3 class="font-serif text-2xl tracking-tight mb-4 text-mist">Engenheiro de Software · Startups em série</h3>
+                    <p class="text-lg font-sans text-mist">
+                        Cinco produtos, dois ao vivo, um adquirido. Aprendi a diferença entre construir rápido e construir certo.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chapter Divider -->
+        <div class="flex items-center justify-center py-16 opacity-70">
+            <div class="h-px bg-gold/30 w-32"></div>
+            <div class="w-2.5 h-2.5 border border-gold rotate-45 mx-6"></div>
+            <div class="h-px bg-gold/30 w-32"></div>
+        </div>
+
+        <!-- Section V: Audiência -->
+        <section id="audiencia" class="max-w-[1280px] mx-auto px-6 py-24 pb-40">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32">
+                <div class="space-y-10 relative z-10">
+                    <div class="flex items-center gap-4 text-xs font-mono text-steel tracking-widest uppercase">
+                        <div class="h-px w-8 bg-gold/30"></div>
+                        <span>V · AUDIÊNCIA</span>
+                    </div>
+                    <h2 class="font-serif text-5xl md:text-6xl tracking-tight leading-tight">
+                        O portão está aberto.<br>
+                        <span class="text-gold">Entre com intenção.</span>
+                    </h2>
+                    <p class="text-xl font-sans text-mist max-w-md">
+                        Trabalho com poucos, mas profundamente. Se você tem um sistema que precisa nascer ou um problema que já venceu três pessoas, mande um recado.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-4 pt-4">
+                        <a href="mailto:carlos@magnus.dev" class="bg-gold text-obsidian font-mono text-xs uppercase tracking-widest px-8 py-4 shadow-[0_0_40px_-10px_rgba(198,167,94,0.45)] hover:brightness-110 transition-all flex items-center gap-2">
+                            Abrir Conversa <i data-lucide="arrow-up-right" class="w-4 h-4" stroke-width="1.5"></i>
+                        </a>
+                        <a href="#obras" class="border border-crimson/60 text-crimson font-mono text-xs uppercase tracking-widest px-8 py-4 hover:bg-crimson/10 transition-colors">
+                            Antes, Veja o Trono
+                        </a>
+                    </div>
+                </div>
+
+                <div class="space-y-4 relative">
+                    <!-- Faint Medallion behind contacts -->
+                    <div class="absolute right-0 top-0 -translate-y-1/4 translate-x-1/4 opacity-20 pointer-events-none">
+                        <svg class="w-64 h-64 text-gold" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.5">
+                            <circle cx="100" cy="100" r="90" />
+                            <path d="M100 10 L140 100 L100 190 L60 100 Z" />
+                            <circle cx="100" cy="100" r="5" fill="currentColor" />
+                        </svg>
+                    </div>
+
+                    <!-- Contact Cards -->
+                    <a href="mailto:carlos@magnus.dev" class="group flex items-center justify-between bg-obsidian/40 border border-gold/15 p-6 hover:border-gold/40 transition-colors backdrop-blur-sm relative z-10">
+                        <div class="flex items-center gap-6">
+                            <div class="w-12 h-12 border border-gold/20 flex items-center justify-center text-gold group-hover:bg-gold/5 transition-colors">
+                                <i data-lucide="mail" class="w-5 h-5" stroke-width="1.5"></i>
+                            </div>
+                            <div>
+                                <div class="text-[10px] font-mono text-steel tracking-widest uppercase mb-1">E-mail</div>
+                                <div class="font-serif text-xl tracking-tight group-hover:text-gold transition-colors">carlos@magnus.dev</div>
+                            </div>
+                        </div>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-steel group-hover:text-gold transition-colors" stroke-width="1.5"></i>
+                    </a>
+
+                    <a href="#" target="_blank" class="group flex items-center justify-between bg-obsidian/40 border border-gold/15 p-6 hover:border-gold/40 transition-colors backdrop-blur-sm relative z-10">
+                        <div class="flex items-center gap-6">
+                            <div class="w-12 h-12 border border-gold/20 flex items-center justify-center text-gold group-hover:bg-gold/5 transition-colors">
+                                <i data-lucide="github" class="w-5 h-5" stroke-width="1.5"></i>
+                            </div>
+                            <div>
+                                <div class="text-[10px] font-mono text-steel tracking-widest uppercase mb-1">Github</div>
+                                <div class="font-serif text-xl tracking-tight group-hover:text-gold transition-colors">github.com/carlosvg</div>
+                            </div>
+                        </div>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-steel group-hover:text-gold transition-colors" stroke-width="1.5"></i>
+                    </a>
+
+                    <a href="#" target="_blank" class="group flex items-center justify-between bg-obsidian/40 border border-gold/15 p-6 hover:border-gold/40 transition-colors backdrop-blur-sm relative z-10">
+                        <div class="flex items-center gap-6">
+                            <div class="w-12 h-12 border border-gold/20 flex items-center justify-center text-gold group-hover:bg-gold/5 transition-colors">
+                                <i data-lucide="linkedin" class="w-5 h-5" stroke-width="1.5"></i>
+                            </div>
+                            <div>
+                                <div class="text-[10px] font-mono text-steel tracking-widest uppercase mb-1">LinkedIn</div>
+                                <div class="font-serif text-xl tracking-tight group-hover:text-gold transition-colors">linkedin.com/in/carlosmagnus</div>
+                            </div>
+                        </div>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4 text-steel group-hover:text-gold transition-colors" stroke-width="1.5"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gold/15 bg-obsidian relative z-20">
+        <div class="max-w-[1280px] mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-4">
+                <span class="border border-gold/30 px-2 py-1 text-xs font-mono text-gold tracking-widest">CM</span>
+                <div>
+                    <div class="text-sm font-sans tracking-wide text-ivory">Carlos Magnus</div>
+                    <div class="text-[10px] font-mono text-steel tracking-widest uppercase">EX SILENTIO, AUCTORITAS</div>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 text-[10px] font-mono text-steel tracking-widest uppercase text-center sm:text-left">
+                <span>MMXXVI</span>
+                <span class="hidden sm:inline-block h-px w-8 bg-gold/20"></span>
+                <span>Construído com Intenção</span>
+                <span class="hidden sm:inline-block h-px w-8 bg-gold/20"></span>
+                <a href="#" class="hover:text-gold transition-colors flex items-center gap-2">Ao Topo <i data-lucide="arrow-up" class="w-3 h-3" stroke-width="1.5"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

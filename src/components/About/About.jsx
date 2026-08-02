@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { useRef, useEffect, useState } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { education, achievements } from '../../data/portfolioData';
 import styles from './About.module.css';
 
@@ -7,7 +8,62 @@ const fadeUp = (delay = 0) => ({
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] } },
 });
 
+// Animated counter hook
+function useCounter(end, duration = 2000, startOnView = false, ref = null) {
+  const [count, setCount] = useState(0);
+  const inView = useInView(ref, { once: true, margin: '-60px' });
+
+  useEffect(() => {
+    if (startOnView && !inView) return;
+    const endNum = parseInt(end);
+    if (isNaN(endNum)) return;
+
+    let startTime;
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      // Ease out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * endNum));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [end, duration, startOnView, inView]);
+
+  return count;
+}
+
+// Spotlight card component
+function SpotlightCard({ children, className, variants }) {
+  const cardRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    cardRef.current.style.setProperty('--spotlight-x', `${x}px`);
+    cardRef.current.style.setProperty('--spotlight-y', `${y}px`);
+  };
+
+  return (
+    <motion.div
+      ref={cardRef}
+      className={`glass-card ${styles.bentoCard} ${styles.spotlightCard} ${className}`}
+      variants={variants}
+      onMouseMove={handleMouseMove}
+    >
+      <div className={styles.spotlightOverlay} />
+      {children}
+    </motion.div>
+  );
+}
+
 export default function About() {
+  const statRef1 = useRef(null);
+  const statRef2 = useRef(null);
+  const exp = useCounter('3', 1500, true, statRef1);
+  const proj = useCounter('10', 1800, true, statRef2);
+
   return (
     <section className={`section ${styles.about}`} id="about">
       <div className="container">
@@ -30,7 +86,7 @@ export default function About() {
           viewport={{ once: true, margin: '-60px' }}
         >
           {/* Bio Card */}
-          <motion.div className={`glass-card ${styles.bentoCard} ${styles.bioCard}`} variants={fadeUp(0.1)}>
+          <SpotlightCard className={styles.bioCard} variants={fadeUp(0.1)}>
             <h3>Who I Am</h3>
             <p>
               I'm an <span className={styles.highlight}>AI Engineer</span> passionate about building
@@ -42,21 +98,25 @@ export default function About() {
               <span className={styles.highlight}>Microsoft Copilot Studio</span>, and{' '}
               <span className={styles.highlight}>Dialogflow</span>.
             </p>
-          </motion.div>
+          </SpotlightCard>
 
           {/* Stat: Experience */}
-          <motion.div className={`glass-card ${styles.bentoCard} ${styles.statCard}`} variants={fadeUp(0.2)}>
-            <div className={styles.statEmoji}>⚡</div>
-            <div className={styles.statValue}>3+</div>
-            <div className={styles.statLabel}>Years Experience</div>
-          </motion.div>
+          <SpotlightCard className={styles.statCard} variants={fadeUp(0.2)}>
+            <div ref={statRef1}>
+              <div className={styles.statEmoji}>⚡</div>
+              <div className={styles.statValue}>{exp}+</div>
+              <div className={styles.statLabel}>Years Experience</div>
+            </div>
+          </SpotlightCard>
 
           {/* Stat: Projects */}
-          <motion.div className={`glass-card ${styles.bentoCard} ${styles.statCard}`} variants={fadeUp(0.3)}>
-            <div className={styles.statEmoji}>🚀</div>
-            <div className={styles.statValue}>10+</div>
-            <div className={styles.statLabel}>Projects Delivered</div>
-          </motion.div>
+          <SpotlightCard className={styles.statCard} variants={fadeUp(0.3)}>
+            <div ref={statRef2}>
+              <div className={styles.statEmoji}>🚀</div>
+              <div className={styles.statValue}>{proj}+</div>
+              <div className={styles.statLabel}>Projects Delivered</div>
+            </div>
+          </SpotlightCard>
 
           {/* Achievement */}
           <motion.div className={`glass-card ${styles.bentoCard} ${styles.achieveCard}`} variants={fadeUp(0.35)}>
@@ -68,19 +128,19 @@ export default function About() {
           </motion.div>
 
           {/* Location */}
-          <motion.div className={`glass-card ${styles.bentoCard} ${styles.locationCard}`} variants={fadeUp(0.4)}>
+          <SpotlightCard className={styles.locationCard} variants={fadeUp(0.4)}>
             <div className={styles.locationEmoji}>📍</div>
             <div className={styles.locationCity}>New Delhi</div>
             <div className={styles.locationCountry}>India</div>
-          </motion.div>
+          </SpotlightCard>
 
           {/* Education */}
-          <motion.div className={`glass-card ${styles.bentoCard} ${styles.eduCard}`} variants={fadeUp(0.45)}>
+          <SpotlightCard className={styles.eduCard} variants={fadeUp(0.45)}>
             <div className={styles.eduEmoji}>🎓</div>
             <div className={styles.eduDegree}>B.E. Civil Engineering</div>
             <div className={styles.eduInstitution}>{education.institution}</div>
             <span className={styles.eduCgpa}>CGPA: {education.cgpa}</span>
-          </motion.div>
+          </SpotlightCard>
         </motion.div>
       </div>
     </section>

@@ -1,3 +1,4 @@
+import { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { experiences, certifications, education } from '../../data/portfolioData';
 import styles from './Journey.module.css';
@@ -5,6 +6,11 @@ import styles from './Journey.module.css';
 const fadeUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] } },
+});
+
+const slideIn = (direction, delay = 0) => ({
+  hidden: { opacity: 0, x: direction === 'left' ? -60 : 60 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] } },
 });
 
 const milestoneIcons = ['🚀', '⚡', '🌱'];
@@ -33,8 +39,34 @@ const milestones = [
 ].reverse(); // Chronological order: oldest first
 
 export default function Journey() {
+  const pathRef = useRef(null);
+  const sectionRef = useRef(null);
+  const [pathProgress, setPathProgress] = useState(0);
+
+  // Animate path line fill on scroll
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const handleScroll = () => {
+      const rect = section.getBoundingClientRect();
+      const sectionTop = rect.top;
+      const sectionHeight = rect.height;
+      const viewportHeight = window.innerHeight;
+
+      // Calculate how much of the section has been scrolled through
+      const scrolled = (viewportHeight - sectionTop) / (sectionHeight + viewportHeight);
+      const progress = Math.max(0, Math.min(1, scrolled * 1.5));
+      setPathProgress(progress);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <section className={`section ${styles.journey}`} id="journey">
+    <section className={`section ${styles.journey}`} id="journey" ref={sectionRef}>
       <div className="container">
         <motion.div
           className="section-header center"
@@ -51,9 +83,13 @@ export default function Journey() {
         </motion.div>
 
         <div className={styles.journeyPath}>
-          {/* Vertical path line */}
-          <div className={styles.pathSvg}>
+          {/* Vertical path line with scroll-based fill */}
+          <div className={styles.pathSvg} ref={pathRef}>
             <div className={styles.pathLine} />
+            <div
+              className={styles.pathFill}
+              style={{ height: `${pathProgress * 100}%` }}
+            />
           </div>
 
           {/* Milestones */}
@@ -64,7 +100,7 @@ export default function Journey() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-60px' }}
-              variants={fadeUp(i * 0.1)}
+              variants={i % 2 === 0 ? slideIn('left', 0.1) : slideIn('right', 0.1)}
             >
               {/* Center node */}
               <div className={styles.milestoneNode}>
@@ -100,38 +136,7 @@ export default function Journey() {
           ))}
         </div>
 
-        {/* Certifications */}
-        <motion.div
-          className={styles.certsSection}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: '-80px' }}
-        >
-          <motion.div className="section-header center" variants={fadeUp()}>
-            <span className="section-label">Credentials</span>
-            <h2 className="section-title" style={{ fontSize: 'clamp(1.6rem, 3vw, 2.2rem)' }}>
-              Certifications & Badges
-            </h2>
-          </motion.div>
 
-          <div className={styles.certsGrid}>
-            {certifications.map((cert, i) => (
-              <motion.div
-                key={cert.name}
-                className={`glass-card ${styles.certCard}`}
-                variants={fadeUp(i * 0.06)}
-              >
-                <div className={styles.certIcon} style={{ background: `${cert.color}15` }}>
-                  {cert.icon}
-                </div>
-                <div>
-                  <div className={styles.certName}>{cert.name}</div>
-                  <div className={styles.certIssuer}>{cert.issuer}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

@@ -13,8 +13,9 @@ export const personalInfo = {
   phone: "+91-9584585815",
   location: "New Delhi, India",
   linkedin: "https://www.linkedin.com/in/jyoti-prakash-dwivedi-6a5096175/",
+  github: "https://github.com/jpdwivedi22/",
   hackerrank: "https://www.hackerrank.com/profile/jpdwivedi26",
-  about: `AI Engineer with 3+ years of hands-on experience in designing and developing conversational AI solutions — including chatbots and voice bots — for automating customer communication across text and voice channels. Proficient in platforms such as Cognigy.AI, Kore.ai, Microsoft Copilot Studio, and Dialogflow, with strong backend development skills using Node.js. Skilled in leveraging cloud platforms like Microsoft Azure and Google Cloud, along with data visualization tools like Power BI. Currently contributing to innovative AI-driven automation and customer service solutions at TeKnowledge, India.`,
+  about: `AI Engineer with hands-on experience leading enterprise conversational AI and agentic delivery, including a 25+ agent Agent Factory initiative on Microsoft Copilot Studio, AI-powered process automation, and public-sector AI adoption programs. Proficient in Microsoft Copilot Studio, Power Automate, Cognigy.AI, Kore.ai and Dialogflow, with strong backend development skills using Node.js. Skilled in leveraging cloud platforms like Microsoft Azure and Google Cloud, along with data visualization tools like Power BI. Currently contributing to agentic AI delivery, presales/RFP support, and multi-channel (WhatsApp/MCP) integrations at TeKnowledge, India.`,
 };
 
 export const stats = [
@@ -26,40 +27,44 @@ export const stats = [
 
 export const skillCategories = [
   {
-    title: "Conversational AI",
+    title: "Conversational & Agentic AI",
     icon: "🤖",
     skills: [
+      "Microsoft Copilot Studio",
       "Kore.ai (XO & Agent Platform)",
       "Cognigy.AI",
-      "Microsoft Copilot Studio",
       "Dialogflow CX/ES",
       "Generative AI & RAG",
-      "Vertex AI Search & Conversation",
+      "Vertex AI (Search & Conversation)",
       "Google CCAI",
-      "Agentic AI",
     ],
   },
   {
-    title: "Voice & Integrations",
+    title: "Automation & Integration",
+    icon: "⚙️",
+    skills: [
+      "Power Automate",
+      "Power Apps",
+      "MCP Servers",
+      "SharePoint",
+      "CM.com WhatsApp",
+      "Twilio",
+      "Adaptive Cards",
+      "xApps",
+    ],
+  },
+  {
+    title: "Voice & Telephony",
     icon: "🎙️",
     skills: [
       "Avaya (AEP/AXP)",
-      "Twilio",
-      "WhatsApp Integration",
-      "Phone/Voice Gateway",
-      "CCAIP",
+      "Genesys",
+      "Cisco",
       "Azure Speech Service",
       "Google Speech",
-      "ElevenLabs",
+      "Elevenlabs",
       "Soniox",
-      "xApps",
-      "Chat SDK",
     ],
-  },
-  {
-    title: "Programming",
-    icon: "💻",
-    skills: ["JavaScript", "Node.js", "Python", "SQL", "HTML/CSS"],
   },
   {
     title: "Cloud & AI Services",
@@ -67,12 +72,10 @@ export const skillCategories = [
     skills: [
       "Google Cloud Platform",
       "Microsoft Azure",
-      "OpenAI APIs",
+      "OpenAI",
       "Gemini",
       "BigQuery",
       "Firestore",
-      "DLP API",
-      "STT/TTS APIs",
       "Azure Functions",
     ],
   },
@@ -81,12 +84,10 @@ export const skillCategories = [
     icon: "🛠️",
     skills: [
       "Power BI",
-      "Azure Data Studio",
-      "Git",
-      "GitHub",
-      "GitLab",
+      "Node.js",
+      "Python",
+      "Git/GitHub",
       "Jira",
-      "Gerrit",
       "VS Code",
       "PyCharm",
     ],
@@ -100,19 +101,18 @@ export const experiences = [
     location: "Gurugram, India",
     period: "April 2025 – Present",
     highlights: [
-      "Contributing to the AI delivery team designing, developing, and deploying enterprise-grade conversational AI solutions with project scoping and timeline planning.",
-      "Collaborating with the presales team to design conversational AI POCs/demos across multiple platforms, showcasing product capabilities to customers.",
-      "Designing and building automated agentic chatbots leveraging RAG and LLM technologies using Cognigy.AI, Microsoft Copilot Studio, and Kore.ai XO Platform.",
-      "Defined KPIs and designed interactive Power BI dashboards to monitor chatbot performance and user engagement.",
+      "Agent Factory Leadership: Led an internal Agent Factory initiative on Microsoft Copilot Studio and the broader Microsoft stack, delivering 25+ production-ready AI agents.",
+      "AI Delivery & Presales: Owned project scoping, timelines, and effort estimation; built Power BI dashboards to track agent performance, and contributed to RFPs and presales demos.",
+      "Channel Integrations: Engineered integration patterns connecting Copilot Studio with CM.com WhatsApp and MCP servers for secure, scalable multi-channel conversational experiences.",
     ],
     techStack: [
-      "Cognigy.AI",
       "Copilot Studio",
+      "Power Automate",
+      "Cognigy.AI",
       "Kore.ai",
-      "Azure Functions",
       "Power BI",
       "RAG",
-      "Search AI",
+      "MCP Servers",
     ],
   },
   {
@@ -121,10 +121,10 @@ export const experiences = [
     location: "Pune, Maharashtra",
     period: "May 2024 – April 2025",
     highlights: [
-      "Managed technical discussions with clients, providing strategic direction for AI chatbot implementations and leading requirement gathering.",
-      "Delivered multiple POCs and demos using Cognigy AI chatbot and voicebot solutions for global organizations with WhatsApp and voicebot integration.",
-      "Developed a GenAI-based Agentic AI chatbot using Dialogflow CX with a custom RAG model.",
-      "Contributed to building a GenAI-powered automation testing tool to streamline bot development and QA processes.",
+      "Client Engagement: Managed technical discussions with clients, providing strategic direction for AI chatbot implementations, requirement gathering, and technical design.",
+      "GenAI Chatbot Development: Delivered multiple POCs and demos using Cognigy AI chatbot and voicebot solutions incorporating WhatsApp and xApps capabilities.",
+      "Agentic AI Chatbot: Developed a GenAI-based POC chatbot using Dialogflow CX with a custom RAG model, enhancing it into an Agentic AI chatbot.",
+      "Automation & Testing: Contributed to building a GenAI-powered automation testing tool to streamline bot development and QA processes.",
     ],
     techStack: [
       "Cognigy.AI",
@@ -141,9 +141,9 @@ export const experiences = [
     location: "Mumbai, Maharashtra",
     period: "Feb 2022 – April 2024",
     highlights: [
-      "Led a team of Conversation Bot Engineers to develop production-grade virtual agents while guiding solution architecture and technical design.",
-      "Designed and developed virtual agents using Google Dialogflow across elections, healthcare, and insurance domains.",
-      "Created custom integrations with Avaya, Genesys, Cisco, and phone gateways.",
+      "Leadership & Strategy: Led a team of Conversation Bot Engineers to develop production-grade virtual agents while guiding solution architecture and technical design.",
+      "Virtual Agent Development: Designed and developed virtual agents using Google Dialogflow across elections, healthcare, and insurance domains.",
+      "Integration & Custom Solutions: Created custom integrations with Avaya, Genesys, Cisco, and phone gateways. Integrated Dialogflow Phone Gateway with Firestore DB.",
       "Managed client meetings focused on conversation design, technical discussions, and discovery sessions.",
     ],
     techStack: [
@@ -160,58 +160,85 @@ export const experiences = [
 
 export const projects = [
   {
+    title: "Travel & Expense Claim Agent",
+    description:
+      "Led a Copilot Studio and Power Automate agent that ingests invoices and trip itineraries, extracts line items, and auto-prepares expense claims for user review and submission.",
+    impact: "Automated expense reporting workflows",
+    techStack: ["Copilot Studio", "Power Automate", "AI Extraction", "SharePoint"],
+    icon: "✈️",
+    color: "#6C5CE7",
+  },
+  {
+    title: "Payment Reconciliation Agent",
+    description:
+      "Led an AI reconciliation agent on Copilot Studio and Power Automate – email receipt extraction, SharePoint storage, and matching against bank statements with manual-approval paths for multi-match cases.",
+    impact: "Streamlined microfinance reconciliation",
+    techStack: ["Copilot Studio", "Power Automate", "Data Extraction", "SharePoint"],
+    icon: "💰",
+    color: "#10B981",
+  },
+  {
     title: "Service Desk AI Assistant",
     description:
-      "Designed and developed a service desk automation chatbot using Microsoft Copilot Studio. Implemented RAG and advanced Search AI capabilities with Azure Functions for intelligent knowledge retrieval. Integrated Power Apps and SQL databases for dynamic workflows.",
-    impact: "Improved support speed and accuracy",
-    techStack: ["Copilot Studio", "RAG", "Azure Functions", "Power Apps", "SQL", "Search AI"],
+      "Built a service desk chatbot on Copilot Studio with RAG/Search AI via Azure Functions, plus Power Apps and SQL for dynamic workflows and backend data handling.",
+    impact: "Improved IT support efficiency",
+    techStack: ["Copilot Studio", "RAG", "Azure Functions", "Power Apps", "SQL"],
     icon: "🎫",
     color: "#4F46E5",
   },
   {
+    title: "Public-Sector AI Adoption Program",
+    description:
+      "Delivered public-facing, multilingual AI agents for citizen services under a national AI adoption initiative, with a focus on government-grade security and scalable rollout.",
+    impact: "Scaled secure citizen services",
+    techStack: ["Multilingual NLP", "Security Compliance", "Government AI"],
+    icon: "🏛️",
+    color: "#D97706",
+  },
+  {
+    title: "Idea Management AI Assistant",
+    description:
+      "Built a virtual assistant to collect, summarize, and visualize employee suggestions. Delivered POCs across marketing, finance, internal learning, and multilingual traffic mobility.",
+    impact: "Streamlined innovation pipeline",
+    techStack: ["Chatbot", "Power BI", "Data Aggregation", "NLP"],
+    icon: "💡",
+    color: "#F59E0B",
+  },
+  {
     title: "AI Assistant for Police",
     description:
-      "Developed and deployed a multilingual AI assistant using Cognigy AI to enhance citizen engagement and service delivery. Integrated secure APIs and optimized conversational flows for a seamless user experience.",
-    impact: "Enhanced citizen engagement across languages",
-    techStack: ["Cognigy.AI", "Multilingual NLP", "Secure APIs", "Conversational Design"],
+      "Developed and deployed a multilingual AI assistant using Cognigy AI to enhance citizen engagement and service delivery. Integrated secure APIs and optimized conversational flows.",
+    impact: "Enhanced citizen engagement",
+    techStack: ["Cognigy.AI", "Multilingual NLP", "Secure APIs"],
     icon: "🛡️",
     color: "#7C3AED",
   },
   {
     title: "Electoral Chat & Voice Bot",
     description:
-      "Developed a Dialogflow CX chatbot and voice bot solution for a US county, integrated with Google Maps, providing real-time Agent Assist features to reduce customer care costs.",
-    impact: "Reduced customer care costs significantly",
-    techStack: ["Dialogflow CX", "Google Maps", "Agent Assist", "Voice Bot", "Real-time"],
+      "Developed a Dialogflow CX chatbot and voice bot solution for a US county, integrated with Google Maps, and provided real-time Agent Assist features to reduce customer care costs.",
+    impact: "Reduced customer care costs",
+    techStack: ["Dialogflow CX", "Google Maps", "Agent Assist", "Voice Bot"],
     icon: "🗳️",
     color: "#2563EB",
   },
   {
     title: "Healthcare Multilingual Voice Bot",
     description:
-      "Built and deployed a Dialogflow CX virtual agent integrated with Genesys telephony for a healthcare organization, supporting English and Spanish. Implemented BigQuery and SOAP API integration for authentication.",
-    impact: "Served patients in multiple languages",
-    techStack: ["Dialogflow CX", "Genesys", "BigQuery", "SOAP API", "Multilingual"],
+      "Built and deployed a Dialogflow CX virtual agent integrated with Genesys telephony for a healthcare organization, supporting English and Spanish. Implemented BigQuery and SOAP APIs.",
+    impact: "Served patients multilingually",
+    techStack: ["Dialogflow CX", "Genesys", "BigQuery", "SOAP API"],
     icon: "🏥",
     color: "#059669",
   },
   {
-    title: "Idea Management AI Assistant",
+    title: "Healthcare Voice Bot (IVR)",
     description:
-      "Developed a virtual assistant to collect and summarize employee suggestions. Aggregated and visualized ideas using Power BI dashboards to support stakeholder review, prioritization, and implementation planning.",
-    impact: "Streamlined organizational innovation pipeline",
-    techStack: ["Chatbot", "Power BI", "Data Aggregation", "NLP"],
-    icon: "💡",
-    color: "#D97706",
-  },
-  {
-    title: "AI Assistant for Airways",
-    description:
-      "Created a POC integrating Dialogflow CX and Cognigy to assist passengers during their journeys. Implemented API calls through GCP Cloud Functions and utilized OpenAI models for smarter responses.",
-    impact: "Enhanced passenger journey experience",
-    techStack: ["Dialogflow CX", "Cognigy", "OpenAI", "GCP Cloud Functions"],
-    icon: "✈️",
-    color: "#DC2626",
+      "Developed and optimized a Dialogflow ES-based solution for a healthcare organization, automating IVR queues and enhancing the customer experience through Avaya telephone integration.",
+    impact: "Automated IVR queues",
+    techStack: ["Dialogflow ES", "Avaya", "Voice Bot", "IVR"],
+    icon: "📞",
+    color: "#EC4899",
   },
 ];
 

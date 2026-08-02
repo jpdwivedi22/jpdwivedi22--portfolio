@@ -1,8 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&family=Dancing+Script:wght@400;500;600;700&display=swap');
 
 /* ── Design Tokens ───────────────────────────────────── */
 :root {
-  /* Light mode (default) */
+  /* Font Variables */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'Fira Code', monospace;
+  --font-cursive: 'Dancing Script', cursive;
+
+  /* Nexus AI Theme (Dark Default) */
+  --bg-primary: #0a0a0c;
+  --bg-secondary: #111116;
+  --bg-card: rgba(26, 26, 31, 0.6);
+  --bg-card-hover: rgba(26, 26, 31, 0.8);
+  --bg-glass: rgba(10, 10, 12, 0.55);
+  --bg-glass-border: rgba(255, 255, 255, 0.06);
+  --bg-elevated: #1a1a20;
+
+  --text-primary: #f4f2ef;
+  --text-secondary: #b8b4ae;
+  --text-muted: #9c988f;
+  --text-inverse: #0a0a0c;
+
+  --accent-primary: #8b7cf7;
+  --accent-secondary: #a78bfa;
+  --accent-warm: #f59e0b;
+  --accent-coral: #ff6b6b;
+  --accent-teal: #0ea5e9;
+  --accent-emerald: #10b981;
+  --accent-gradient: linear-gradient(90deg, #8b7cf7, #a78bfa);
+  --accent-gradient-text: linear-gradient(90deg, #8b7cf7, #a78bfa);
+  --accent-glow: rgba(139, 124, 247, 0.15);
+
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(108, 92, 231, 0.3);
+
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.2), 0 1px 2px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.3);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.4);
+  --shadow-glow: 0 0 60px rgba(139, 124, 247, 0.15);
+  --shadow-card: 0 2px 16px rgba(0,0,0,0.2);
+
+  --mesh-1: #e0e7ff;
+  --mesh-2: #fce7f3;
+  --mesh-3: #ccfbf1;
+  --mesh-4: #fef3c7;
+
+  --journey-line: rgba(255, 255, 255, 0.16);
+  --journey-dot: #8b7cf7;
+  --journey-dot-glow: rgba(139, 124, 247, 0.3);
+}
+
+[data-theme="light"] {
   --bg-primary: #f8f7f4;
   --bg-secondary: #efeee9;
   --bg-card: rgba(255, 255, 255, 0.7);
@@ -16,16 +65,6 @@
   --text-muted: #8e8ea8;
   --text-inverse: #ffffff;
 
-  --accent-primary: #6C5CE7;
-  --accent-secondary: #a78bfa;
-  --accent-warm: #f59e0b;
-  --accent-coral: #ff6b6b;
-  --accent-teal: #0ea5e9;
-  --accent-emerald: #10b981;
-  --accent-gradient: linear-gradient(135deg, #6C5CE7, #a78bfa, #c084fc);
-  --accent-gradient-text: linear-gradient(135deg, #6C5CE7, #a78bfa);
-  --accent-glow: rgba(108, 92, 231, 0.15);
-
   --border-color: rgba(0, 0, 0, 0.08);
   --border-hover: rgba(108, 92, 231, 0.3);
 
@@ -34,52 +73,10 @@
   --shadow-lg: 0 8px 40px rgba(0,0,0,0.08);
   --shadow-glow: 0 0 60px rgba(108, 92, 231, 0.08);
   --shadow-card: 0 2px 16px rgba(0,0,0,0.04);
-
-  --mesh-1: #e0e7ff;
-  --mesh-2: #fce7f3;
-  --mesh-3: #ccfbf1;
-  --mesh-4: #fef3c7;
-
-  --journey-line: #d4d0f0;
-  --journey-dot: #6C5CE7;
-  --journey-dot-glow: rgba(108, 92, 231, 0.3);
 }
 
 [data-theme="dark"] {
-  --bg-primary: #0a0a14;
-  --bg-secondary: #12121f;
-  --bg-card: rgba(20, 20, 40, 0.6);
-  --bg-card-hover: rgba(30, 30, 55, 0.8);
-  --bg-glass: rgba(255, 255, 255, 0.03);
-  --bg-glass-border: rgba(255, 255, 255, 0.06);
-  --bg-elevated: #16162a;
-
-  --text-primary: #eeeef5;
-  --text-secondary: #9ca3c4;
-  --text-muted: #5c6190;
-  --text-inverse: #0a0a14;
-
-  --accent-primary: #8b7cf7;
-  --accent-secondary: #a78bfa;
-  --accent-glow: rgba(139, 124, 247, 0.2);
-
-  --border-color: rgba(255, 255, 255, 0.06);
-  --border-hover: rgba(139, 124, 247, 0.3);
-
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.2);
-  --shadow-md: 0 4px 20px rgba(0,0,0,0.3);
-  --shadow-lg: 0 8px 40px rgba(0,0,0,0.4);
-  --shadow-glow: 0 0 60px rgba(139, 124, 247, 0.1);
-  --shadow-card: 0 2px 16px rgba(0,0,0,0.2);
-
-  --mesh-1: rgba(108, 92, 231, 0.08);
-  --mesh-2: rgba(236, 72, 153, 0.06);
-  --mesh-3: rgba(6, 182, 212, 0.06);
-  --mesh-4: rgba(245, 158, 11, 0.05);
-
-  --journey-line: rgba(139, 124, 247, 0.2);
-  --journey-dot: #8b7cf7;
-  --journey-dot-glow: rgba(139, 124, 247, 0.4);
+  /* Inherits default Nexus Theme from :root */
 }
 
 /* ── Reset & Base ────────────────────────────────────── */
@@ -99,7 +96,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-body);
   background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.7;
@@ -111,13 +108,61 @@ body {
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb {
-  background: var(--accent-primary);
+  background: linear-gradient(180deg, var(--accent-primary), var(--accent-secondary));
   border-radius: 10px;
 }
 
 ::selection {
   background: rgba(108, 92, 231, 0.25);
   color: var(--text-primary);
+}
+
+/* ── Scroll Progress Bar ─────────────────────────────── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--accent-gradient);
+  z-index: 9999;
+  transition: width 0.05s linear;
+  box-shadow: 0 0 10px rgba(108, 92, 231, 0.4), 0 0 20px rgba(108, 92, 231, 0.2);
+}
+
+/* ── Back to Top ─────────────────────────────────────── */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--accent-gradient);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(108, 92, 231, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(20px) scale(0.8);
+  pointer-events: none;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 32px rgba(108, 92, 231, 0.5);
 }
 
 /* ── Container ───────────────────────────────────────── */
@@ -134,7 +179,7 @@ body {
 }
 
 .section-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -155,7 +200,7 @@ body {
 }
 
 .section-title {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-heading);
   font-size: clamp(2.2rem, 4vw, 3.2rem);
   font-weight: 700;
   color: var(--text-primary);
@@ -196,6 +241,36 @@ body {
   -webkit-backdrop-filter: blur(20px);
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(108, 92, 231, 0),
+    rgba(108, 92, 231, 0),
+    rgba(108, 92, 231, 0)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  transition: background 0.5s ease;
+  z-index: 1;
+}
+
+.glass-card:hover::before {
+  background: linear-gradient(
+    rgba(139, 124, 247, 0.3),
+    rgba(167, 139, 250, 0.15),
+    rgba(139, 124, 247, 0.3)
+  );
 }
 
 .glass-card:hover {
@@ -212,7 +287,7 @@ body {
   padding: 5px 12px;
   font-size: 0.72rem;
   font-weight: 600;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   color: var(--accent-primary);
   background: var(--accent-glow);
   border-radius: 8px;
@@ -226,7 +301,7 @@ body {
   align-items: center;
   gap: 10px;
   padding: 14px 30px;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-heading);
   font-size: 0.95rem;
   font-weight: 600;
   border: none;
@@ -235,6 +310,22 @@ body {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   letter-spacing: 0.2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--ripple-x, 50%) var(--ripple-y, 50%), rgba(255,255,255,0.25) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.btn:active::after {
+  opacity: 1;
 }
 
 .btn-primary {
@@ -359,6 +450,32 @@ a {
   opacity: 0.04;
 }
 
+/* ── Global Utility Animations ───────────────────────── */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes gradientBorderSpin {
+  0% { --angle: 0deg; }
+  100% { --angle: 360deg; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(108, 92, 231, 0.2); }
+  50% { box-shadow: 0 0 20px 4px rgba(108, 92, 231, 0.15); }
+}
+
 /* ── Responsive ──────────────────────────────────────── */
 @media (max-width: 1024px) {
   .section { padding: 80px 0; }
@@ -368,6 +485,7 @@ a {
   .section { padding: 60px 0; }
   .container { padding: 0 20px; }
   .section-header { margin-bottom: 40px; }
+  .back-to-top { bottom: 20px; right: 20px; width: 40px; height: 40px; }
 }
 
 @media (max-width: 480px) {

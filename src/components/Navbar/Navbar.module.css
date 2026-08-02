@@ -1,32 +1,47 @@
 .navbar {
   position: fixed;
   top: 16px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  width: 100%;
   z-index: 1000;
-  padding: 10px 8px;
-  background: var(--bg-glass);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid var(--bg-glass-border);
-  border-radius: 16px;
+  padding: 0 24px;
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: var(--shadow-md);
+  display: flex;
+  justify-content: center;
 }
 
 .navbar.scrolled {
   top: 12px;
-  box-shadow: var(--shadow-lg);
 }
 
 .navContent {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.navPill {
+  display: flex;
+  align-items: center;
   gap: 4px;
+  background: var(--bg-glass);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--bg-glass-border);
+  border-radius: 16px;
+  padding: 6px 8px;
+  box-shadow: var(--shadow-md);
+  transition: box-shadow 0.3s ease;
+}
+
+.navbar.scrolled .navPill {
+  box-shadow: var(--shadow-lg);
 }
 
 .logo {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.15rem;
   font-weight: 700;
   padding: 6px 14px;
@@ -44,7 +59,7 @@
 }
 
 .navLink {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.82rem;
   font-weight: 500;
   color: var(--text-secondary);
@@ -134,7 +149,7 @@
 .mobileMenu.open { display: flex; }
 
 .mobileNavLink {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: var(--font-heading);
   font-size: 1.6rem;
   font-weight: 600;
   color: var(--text-secondary);

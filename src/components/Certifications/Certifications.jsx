@@ -7,55 +7,70 @@ const fadeUp = {
   visible: (i = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.5, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] },
   }),
 };
 
 export default function Certifications() {
   return (
     <section className={`section ${styles.certifications}`} id="certifications">
-      <div className="container">
-        <motion.div
-          className="section-header"
+      <div className={`container ${styles.certContainer}`}>
+        
+        {/* Left Side: Title and Intro */}
+        <motion.div 
+          className={styles.certLeft}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
           variants={fadeUp}
         >
-          <span className="section-label">Certifications & Education</span>
-          <h2 className="section-title">Credentials</h2>
-          <p className="section-subtitle">
-            Professional certifications and academic qualifications validating my expertise.
+          <span className={styles.cursiveLabel}>Check Out</span>
+          <h2 className="section-title" style={{ marginBottom: '24px' }}>
+            MY CERTIFICATIONS
+          </h2>
+          <p className="section-subtitle" style={{ marginBottom: '32px' }}>
+            I have completed various professional courses and exams to validate my AI and engineering skills, and I'm sharing a few of them here.
           </p>
+          <a href="#projects" className={`btn btn-secondary ${styles.knowMoreBtn}`}>
+            KNOW MORE
+          </a>
         </motion.div>
 
-        <div className={styles.certGrid}>
+        {/* Right Side: Cards Grid/Carousel */}
+        <div className={styles.certRight}>
           {certifications.map((cert, i) => (
             <motion.div
               key={cert.name}
-              className={`glass-card ${styles.certCard}`}
+              className={styles.certCard}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-50px' }}
               variants={fadeUp}
               custom={i}
             >
-              <div
-                className={styles.certIcon}
-                style={{ background: `${cert.color}15` }}
-              >
-                {cert.icon}
+              {/* Image Placeholder */}
+              <div className={styles.certImagePlaceholder}>
+                <div className={styles.certIconLarge} style={{ color: cert.color }}>
+                  {cert.icon}
+                </div>
+                {/* We can place an actual img tag here later */}
               </div>
+
+              {/* Info */}
               <div className={styles.certInfo}>
                 <h3 className={styles.certName}>{cert.name}</h3>
-                <p className={styles.certIssuer}>{cert.issuer}</p>
-                {cert.period && <p className={styles.certPeriod}>{cert.period}</p>}
+                <p className={styles.certIssuer} style={{ color: cert.color }}>
+                  {cert.issuer.toUpperCase()}
+                </p>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Education */}
+      </div>
+
+      {/* Education - kept simple at the bottom */}
+      <div className="container" style={{ marginTop: '100px' }}>
         <motion.div
           className={styles.education}
           initial="hidden"

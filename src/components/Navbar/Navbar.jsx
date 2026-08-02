@@ -50,31 +50,32 @@ export default function Navbar() {
           <div className={styles.logo} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             JP.
           </div>
+          <div className={styles.navPill}>
+            <ul className={styles.navLinks}>
+              {navItems.map((item) => (
+                <li key={item}>
+                  <span
+                    className={`${styles.navLink} ${activeSection === item.toLowerCase() ? styles.active : ''}`}
+                    onClick={() => scrollTo(item)}
+                  >
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-          <ul className={styles.navLinks}>
-            {navItems.map((item) => (
-              <li key={item}>
-                <span
-                  className={`${styles.navLink} ${activeSection === item.toLowerCase() ? styles.active : ''}`}
-                  onClick={() => scrollTo(item)}
-                >
-                  {item}
-                </span>
-              </li>
-            ))}
-          </ul>
+            <button className={styles.themeToggle} onClick={toggleTheme} aria-label="Toggle theme">
+              {theme === 'light' ? <FaMoon /> : <FaSun />}
+            </button>
 
-          <button className={styles.themeToggle} onClick={toggleTheme} aria-label="Toggle theme">
-            {theme === 'light' ? <FaMoon /> : <FaSun />}
-          </button>
-
-          <button
-            className={`${styles.hamburger} ${mobileOpen ? styles.open : ''}`}
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
-          >
-            <span /><span /><span />
-          </button>
+            <button
+              className={`${styles.hamburger} ${mobileOpen ? styles.open : ''}`}
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Toggle menu"
+            >
+              <span /><span /><span />
+            </button>
+          </div>
         </div>
       </motion.nav>
 

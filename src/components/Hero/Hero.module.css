@@ -18,7 +18,7 @@
 
 /* Left side */
 .heroLeft {
-  max-width: 560px;
+  max-width: 600px;
 }
 
 .statusBadge {
@@ -26,13 +26,13 @@
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  background: var(--accent-glow);
+  background: var(--bg-glass);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--accent-primary);
+  color: var(--text-secondary);
   margin-bottom: 28px;
   letter-spacing: 0.5px;
 }
@@ -51,12 +51,12 @@
 }
 
 .heroName {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+  font-family: var(--font-cursive);
+  font-size: clamp(3.5rem, 6.5vw, 6rem);
   font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: -2px;
-  margin-bottom: 12px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
   color: var(--text-primary);
 }
 
@@ -68,8 +68,8 @@
 }
 
 .roleWrapper {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-family: var(--font-cursive);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
   font-weight: 500;
   color: var(--text-secondary);
   margin-bottom: 24px;
@@ -82,18 +82,18 @@
   width: 2px;
   height: 1.1em;
   background: var(--accent-primary);
-  margin-left: 3px;
+  margin-left: 4px;
   animation: blink 1s step-end infinite;
 }
 
 @keyframes blink { 50% { opacity: 0; } }
 
 .heroDesc {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  line-height: 1.8;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
   margin-bottom: 36px;
-  max-width: 480px;
+  max-width: 500px;
 }
 
 .ctas {
@@ -112,12 +112,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
-  border: 1px solid var(--border-color);
-  color: var(--text-muted);
-  font-size: 1rem;
+  border: 1px solid var(--bg-glass-border);
+  color: var(--text-secondary);
+  font-size: 1.1rem;
   transition: all 0.3s ease;
   background: var(--bg-glass);
 }
@@ -187,12 +187,14 @@
 .floatingBadge {
   position: absolute;
   padding: 10px 16px;
-  background: var(--bg-elevated);
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--bg-glass-border);
   border-radius: 14px;
   box-shadow: var(--shadow-md);
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.85rem;
+  font-weight: 500;
   color: var(--text-primary);
   display: flex;
   align-items: center;
@@ -270,7 +272,7 @@
 }
 
 .scrollText {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.65rem;
   color: var(--text-muted);
   letter-spacing: 2px;
