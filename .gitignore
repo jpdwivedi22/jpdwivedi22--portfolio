@@ -22,6 +22,8 @@ dist-ssr
 
 # Personal data (not for public repo)
 personal data/
+TEMPLATES/
+replaceFonts.js
 
 # Editor directories and files
 .vscode/*
