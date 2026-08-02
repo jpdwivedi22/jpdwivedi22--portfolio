@@ -1,0 +1,141 @@
+.contact {
+  position: relative;
+  z-index: 2;
+}
+
+.contactWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 40px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.contactInfo h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.contactInfo > p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.linkItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.linkItem:hover {
+  border-color: var(--border-hover);
+  background: var(--accent-glow);
+  transform: translateX(6px);
+}
+
+.linkIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.linkLabel {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.linkValue {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Form */
+.formCard {
+  padding: 32px;
+}
+
+.formGroup {
+  margin-bottom: 18px;
+}
+
+.formGroup label {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 13px 16px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.92rem;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.formGroup textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.submitBtn {
+  width: 100%;
+  justify-content: center;
+  padding: 16px;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .contactWrapper {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .formCard { padding: 24px; }
+}
