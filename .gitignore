@@ -12,6 +12,17 @@ dist
 dist-ssr
 *.local
 
+# Netlify
+.netlify
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Personal data (not for public repo)
+personal data/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
