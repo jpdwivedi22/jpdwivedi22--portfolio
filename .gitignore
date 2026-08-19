@@ -24,8 +24,6 @@ dist-ssr
 personal data/
 TEMPLATES/
 replaceFonts.js
-public/Certificates/
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
