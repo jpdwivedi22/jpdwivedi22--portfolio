@@ -414,6 +414,27 @@ a {
   animation: meshFloat1 22s ease-in-out infinite reverse;
 }
 
+/* Utilities for floating images */
+.floating-img {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* ── Lightbox Global Utilities ─────────────────────── */
+body.lightbox-open {
+  overflow: hidden; /* Prevent scrolling when lightbox is open */
+}
+
+body.lightbox-open nav,
+body.lightbox-open header {
+  display: none !important;
+}
+
 @keyframes meshFloat1 {
   0%, 100% { transform: translate(0, 0) scale(1); }
   33% { transform: translate(60px, -40px) scale(1.1); }

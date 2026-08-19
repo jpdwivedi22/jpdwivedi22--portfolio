@@ -260,42 +260,71 @@ export const certifications = [
     period: "03/2023 - 02/2026",
     icon: "☁️",
     color: "#4285F4",
+    images: ["/Certificates/GCP ACE.png"],
   },
   {
     name: "Kore.ai XO Platform & Agent Platform",
     issuer: "Kore.ai",
     icon: "🤖",
     color: "#7C3AED",
+    images: [
+      "/Certificates/Kore AI Certificates/Jyoti Praksh Dwivedi - Agent Platform.jpg",
+      "/Certificates/Kore AI Certificates/Jyoti Prakash Dwivedi - Agent AI.jpg",
+      "/Certificates/Kore AI Certificates/Jyoti Prakash Dwivedi - Automation AI Advance.jpg",
+      "/Certificates/Kore AI Certificates/Jyoti Prakash Dwivedi - Automation AI Basic.jpg",
+      "/Certificates/Kore AI Certificates/Jyoti Prakash Dwivedi - Contact Centre AI.jpg",
+      "/Certificates/Kore AI Certificates/Jyoti Prakash Dwivedi - Search AI Advacned.jpg",
+      "/Certificates/Kore AI Certificates/Jyoti Prakash Dwivedi - Search AI Basic.jpg"
+    ],
   },
   {
     name: "Cognigy.AI Developer & Foundation Course",
     issuer: "Cognigy",
     icon: "🧠",
     color: "#EC4899",
+    images: [
+      "/Certificates/Cognigy.AI Developer Course.png",
+      "/Certificates/Cognigy.AI Foundation Course.png"
+    ],
   },
   {
     name: "CCAI - Contact Center AI",
     issuer: "Google Cloud",
     icon: "📞",
     color: "#34A853",
+    images: ["/Certificates/CCAI.png"],
   },
   {
     name: "Dialogflow ES & CX",
     issuer: "Google Cloud",
     icon: "💬",
     color: "#FBBC05",
+    images: [
+      "/Certificates/Dialogflow CX main.png",
+      "/Certificates/Dialogflow CX.png",
+      "/Certificates/Dialogflow ES.png"
+    ],
   },
   {
-    name: "Conversational AI on Vertex AI",
-    issuer: "Google Cloud",
-    icon: "🔮",
-    color: "#EA4335",
+    name: "Python Beginner to Advanced",
+    issuer: "Udemy",
+    icon: "🐍",
+    color: "#3776AB",
+    images: ["/Certificates/Python Beginner to Advanced.png"],
   },
   {
-    name: "JavaScript & SQL",
+    name: "JavaScript",
     issuer: "Udemy",
     icon: "📜",
-    color: "#A855F7",
+    color: "#F7DF1E",
+    images: ["/Certificates/JavaScript.jpg"],
+  },
+  {
+    name: "SQL",
+    issuer: "Udemy",
+    icon: "🗄️",
+    color: "#336791",
+    images: ["/Certificates/SQL.jpg"],
   },
 ];
 
@@ -312,5 +341,6 @@ export const achievements = [
     org: "Quantiphi",
     date: "August 2023",
     description: "Received the Global R&R Kaizen Award for outstanding performance.",
+    image: "/Certificates/Jyoti Prakash Dwivedi - Q05711 - Kaizen Award.jpg",
   },
 ];

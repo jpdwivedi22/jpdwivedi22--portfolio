@@ -85,6 +85,70 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.certMediaContainer {
+  height: 200px;
+  width: 100%;
+  position: relative;
+  /* Instead of filling the square, we add padding and a nice background */
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, rgba(139, 124, 247, 0.1) 0%, transparent 70%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  overflow: visible; /* To allow the stacked cards to pop out slightly if needed */
+}
+
+[data-theme="dark"] .certMediaContainer {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stackedMediaWrapper {
+  position: absolute;
+  width: calc(100% - 60px);
+  height: calc(100% - 40px);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transform-origin: bottom center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  background: var(--bg-card);
+}
+
+.certCard:hover .stackedMediaWrapper {
+  /* On hover, separate the stack slightly */
+  transform: scale(1) translateY(calc(var(--index, 0) * -4px)) !important;
+}
+
+.certCard:hover .stackedMediaWrapper:nth-child(1) { --index: 0; }
+.certCard:hover .stackedMediaWrapper:nth-child(2) { --index: 1; transform: scale(0.95) translateY(-8px) !important; }
+.certCard:hover .stackedMediaWrapper:nth-child(3) { --index: 2; transform: scale(0.90) translateY(-16px) !important; }
+
+.certMedia {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.multipleBadge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
 .certIconLarge {
   font-size: 4rem;
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
@@ -167,6 +231,102 @@
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--accent-primary);
+}
+
+/* ── Lightbox Overlay ──────────────────────────────── */
+.lightboxOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightboxContent {
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightboxMedia {
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  background: #fff; /* Good for PDFs or transparent PNGs */
+}
+
+.closeBtn {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.closeBtn:hover {
+  opacity: 1;
+}
+
+.navBtnLeft, .navBtnRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.navBtnLeft:hover, .navBtnRight:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.navBtnLeft {
+  left: -60px;
+}
+
+.navBtnRight {
+  right: -60px;
+}
+
+.lightboxCounter {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.7);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
 }
 
 /* ── Responsive ────────────────────────────────────── */

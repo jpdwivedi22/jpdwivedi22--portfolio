@@ -120,11 +120,47 @@ export default function About() {
 
           {/* Achievement */}
           <motion.div className={`glass-card ${styles.bentoCard} ${styles.achieveCard}`} variants={fadeUp(0.35)}>
-            <div className={styles.achieveIcon}>🏆</div>
-            <div className={styles.achieveText}>
-              <h4>{achievements[0].title}</h4>
-              <p>{achievements[0].org} • {achievements[0].date}</p>
-            </div>
+            <a 
+              href={achievements[0].image}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ 
+                textDecoration: 'none', 
+                color: 'inherit', 
+                display: 'flex', 
+                width: '100%', 
+                height: '100%', 
+                alignItems: 'center',
+                justifyContent: 'space-between'
+              }}
+              title="Click to view award certificate"
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '18px' }}>
+                <div className={styles.achieveIcon}>🏆</div>
+                <div className={styles.achieveText}>
+                  <h4>{achievements[0].title}</h4>
+                  <p>{achievements[0].org} • {achievements[0].date}</p>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--accent-emerald)', marginTop: '6px', display: 'block', fontFamily: 'var(--font-mono)' }}>
+                    View Certificate ↗
+                  </span>
+                </div>
+              </div>
+              <img 
+                src={achievements[0].image} 
+                alt="Award Thumbnail" 
+                style={{ 
+                  height: '70px', 
+                  width: 'auto', 
+                  borderRadius: '4px', 
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+                  objectFit: 'contain',
+                  transform: 'rotate(5deg)',
+                  transition: 'transform 0.3s ease'
+                }}
+                onMouseOver={(e) => e.currentTarget.style.transform = 'rotate(0deg) scale(1.1)'}
+                onMouseOut={(e) => e.currentTarget.style.transform = 'rotate(5deg) scale(1)'}
+              />
+            </a>
           </motion.div>
 
           {/* Location */}
