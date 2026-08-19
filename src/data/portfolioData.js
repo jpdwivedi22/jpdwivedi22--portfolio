@@ -160,6 +160,17 @@ export const experiences = [
 
 export const projects = [
   {
+    title: "TeKnowledge AI Agents Library",
+    description:
+      "Led the Agent Factory initiative at TeKnowledge, architecting and delivering 25+ production-ready AI agents across Procurement, Finance, HR, Marketing, Telecom, BFSI & Healthcare — now a live enterprise product serving global clients.",
+    impact: "Live enterprise product • 25+ AI agents shipped",
+    techStack: ["Copilot Studio", "Power Automate", "RAG", "Azure", "MCP Servers", "SharePoint"],
+    icon: "🏭",
+    color: "#FF835D",
+    featured: true,
+    liveUrl: "https://teknowledge.com/services/agentic-ai-adoption/ai-agents-library/",
+  },
+  {
     title: "Travel & Expense Claim Agent",
     description:
       "Led a Copilot Studio and Power Automate agent that ingests invoices and trip itineraries, extracts line items, and auto-prepares expense claims for user review and submission.",

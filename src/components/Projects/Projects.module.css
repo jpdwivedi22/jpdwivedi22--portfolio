@@ -12,6 +12,171 @@
   margin: 0 auto;
 }
 
+/* ── Featured Project Card ─────────────────────────── */
+.featuredCard {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.featuredGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  padding: 2px;
+  background: linear-gradient(135deg, #FF835D, #FF835D80, #8b7cf7, #FF835D);
+  background-size: 300% 300%;
+  animation: glowShift 6s ease infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes glowShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.featuredInner {
+  display: flex;
+  align-items: stretch;
+  background: var(--bg-card);
+  border-radius: 28px;
+  overflow: hidden;
+  min-height: 420px;
+}
+
+.featuredContent {
+  flex: 1;
+  padding: 48px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featuredBadges {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.featuredTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #FF835D;
+  background: rgba(255, 131, 93, 0.1);
+  border: 1px solid rgba(255, 131, 93, 0.25);
+  border-radius: 999px;
+}
+
+.liveTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--accent-emerald);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 999px;
+}
+
+.liveDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-emerald);
+  box-shadow: 0 0 8px var(--accent-emerald);
+  animation: pulse 2s infinite;
+}
+
+.featuredTitle {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.featuredDesc {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.viewLiveBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #FF835D, #e06840);
+  color: #fff;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.9rem;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 20px rgba(255, 131, 93, 0.3);
+  width: fit-content;
+}
+
+.viewLiveBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(255, 131, 93, 0.45);
+}
+
+.featuredVisual {
+  width: 380px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.featuredIcon {
+  font-size: 5rem;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.4));
+  margin-bottom: 16px;
+}
+
+.agentCount {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #FF835D;
+  line-height: 1;
+}
+
+.agentLabel {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
 /* ── Individual Project Container ──────────────────── */
 .projectCard {
   position: relative;
@@ -221,6 +386,12 @@
     width: 60%;
     padding: 32px;
   }
+  .featuredVisual {
+    width: 280px;
+  }
+  .featuredTitle {
+    font-size: 1.8rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -260,5 +431,29 @@
   .projectTitle {
     font-size: 1.4rem;
     width: 100%;
+  }
+
+  /* Featured card mobile */
+  .featuredInner {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .featuredVisual {
+    width: 100%;
+    height: 220px;
+    order: -1;
+  }
+
+  .featuredContent {
+    padding: 32px 24px;
+  }
+
+  .featuredTitle {
+    font-size: 1.5rem;
+  }
+
+  .featuredDesc {
+    font-size: 0.95rem;
   }
 }
